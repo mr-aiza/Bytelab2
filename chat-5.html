@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>چت هوش مصنوعی | بایت‌لب</title>
+<meta name="description" content="سوالات خودتون درباره طراحی سایت، اپلیکیشن یا خدمات کامپیوتر رو از چت هوش مصنوعی بایت‌لب بپرسید.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://mr-aiza.github.io/bytelab/chat.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a href="index.html" class="logo">بایت<span>لب</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">خانه</a></li>
+      <li><a href="tarahi-site.html">طراحی سایت</a></li>
+      <li><a href="tarahi-app.html">طراحی اپلیکیشن</a></li>
+      <li><a href="khadamat-computer.html">خدمات کامپیوتر</a></li>
+      <li><a href="blog.html">بلاگ</a></li>
+      <li><a href="index.html#contact">تماس</a></li>
+    </ul>
+    <a href="tel:+989388088657" class="nav-cta">تماس مستقیم</a>
+    <button class="nav-toggle" id="navToggle" aria-label="منو">☰</button>
+  </nav>
+</header>
+
+<section style="padding:48px 0">
+  <div class="wrap">
+    <div class="section-head" style="margin:0 auto 34px;text-align:center;max-width:560px">
+      <span class="bit-label" style="justify-content:center">CHAT / بایت‌لب</span>
+      <h2>سوالت رو بپرس</h2>
+      <p>درباره طراحی سایت، اپلیکیشن یا خدمات کامپیوتر سوال داری؟ همین‌جا بپرس.</p>
+    </div>
+
+    <div class="chat-shell">
+      <div class="chat-head">
+        <span class="dot"></span>
+        <strong>دستیار بایت‌لب</strong>
+      </div>
+      <div class="chat-log" id="chatLog">
+        <div class="msg bot">سلام 👋 من دستیار بایت‌لب هستم. می‌تونم درباره خدمات، قیمت و زمان تحویل راهنماییت کنم. یکی از گزینه‌ها رو انتخاب کن یا سوالت رو تایپ کن.</div>
+      </div>
+      <div class="quick-replies" id="quickReplies">
+        <button data-q="هزینه طراحی سایت چقدره">هزینه طراحی سایت</button>
+        <button data-q="طراحی اپلیکیشن چطوره">طراحی اپلیکیشن</button>
+        <button data-q="خدمات کامپیوتر چیه">خدمات کامپیوتر</button>
+        <button data-q="چطور تماس بگیرم">راه‌های تماس</button>
+      </div>
+      <form class="chat-input" id="chatForm">
+        <input type="text" id="chatInput" placeholder="سوالت رو بنویس..." autocomplete="off">
+        <button type="submit">ارسال</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© ۱۴۰۵ بایت‌لب — تمام حقوق محفوظ است.</span>
+    <div class="footer-links">
+      <a href="index.html">خانه</a>
+      <a href="blog.html">بلاگ</a>
+      <a href="index.html#contact">تماس</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click', function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+const log = document.getElementById('chatLog');
+const form = document.getElementById('chatForm');
+const input = document.getElementById('chatInput');
+const quick = document.getElementById('quickReplies');
+
+const CONTACT = {
+  phone: '۰۹۳۸ ۸۰۸ ۸۶۵۷',
+  telegram: '@ByteLab_com',
+  instagram: '@ByteLab_com',
+  email: 'aliabdoli161@gmail.com'
+};
+
+function addMsg(text, who){
+  const div = document.createElement('div');
+  div.className = 'msg ' + who;
+  div.textContent = text;
+  log.appendChild(div);
+  log.scrollTop = log.scrollHeight;
+}
+
+function reply(q){
+  const t = q.toLowerCase();
+  if(t.includes('هزینه') && (t.includes('سایت') || t.includes('طراحی'))){
+    return 'هزینه طراحی سایت بسته به نوع پروژه (لندینگ، شرکتی یا فروشگاهی) متفاوته. برای برآورد دقیق با شماره ' + CONTACT.phone + ' تماس بگیر یا جزئیات بیشتر رو در صفحه «طراحی سایت» ببین.';
+  }
+  if(t.includes('اپلیکیشن') || t.includes('اپ ')){
+    return 'ما اپلیکیشن اختصاصی اندروید و iOS طراحی می‌کنیم؛ از UI/UX تا انتشار در استور. برای مشاوره رایگان تماس بگیر: ' + CONTACT.phone;
+  }
+  if(t.includes('کامپیوتر') || t.includes('شبکه') || t.includes('سیستم')){
+    return 'خدمات کامپیوتر شامل نصب، رفع اشکال، بهینه‌سازی سیستم و پشتیبانی شبکه است. برای هماهنگی تماس بگیر: ' + CONTACT.phone;
+  }
+  if(t.includes('تماس') || t.includes('شماره') || t.includes('تلفن')){
+    return 'می‌تونی از این راه‌ها با ما در تماس باشی:\n☎ تماس: ' + CONTACT.phone + '\n✉ ایمیل: ' + CONTACT.email + '\nتلگرام: ' + CONTACT.telegram + '\nاینستاگرام: ' + CONTACT.instagram;
+  }
+  if(t.includes('زمان') || t.includes('تحویل') || t.includes('چند روز')){
+    return 'بسته به پیچیدگی پروژه، از چند روز تا چند هفته زمان می‌بره. زمان‌بندی دقیق بعد از بررسی نیازت اعلام می‌شه.';
+  }
+  return 'برای پاسخ دقیق‌تر بهتره مستقیم صحبت کنیم. می‌تونی از طریق تلگرام (' + CONTACT.telegram + ')، اینستاگرام (' + CONTACT.instagram + ') یا تماس تلفنی (' + CONTACT.phone + ') باهامون در ارتباط باشی.';
+}
+
+function handle(q){
+  addMsg(q, 'user');
+  setTimeout(function(){ addMsg(reply(q), 'bot'); }, 400);
+}
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  const v = input.value.trim();
+  if(!v) return;
+  handle(v);
+  input.value = '';
+});
+
+quick.addEventListener('click', function(e){
+  if(e.target.tagName === 'BUTTON'){
+    handle(e.target.dataset.q);
+  }
+});
+</script>
+</body>
+</html>
