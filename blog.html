@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بلاگ | بایت‌لب</title>
+<meta name="description" content="مقالات بایت‌لب درباره طراحی سایت، طراحی اپلیکیشن و خدمات کامپیوتر.">
+<link rel="canonical" href="https://mr-aiza.github.io/bytelab/blog.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a href="index.html" class="logo">بایت<span>لب</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">خانه</a></li>
+      <li><a href="tarahi-site.html">طراحی سایت</a></li>
+      <li><a href="tarahi-app.html">طراحی اپلیکیشن</a></li>
+      <li><a href="khadamat-computer.html">خدمات کامپیوتر</a></li>
+      <li><a href="blog.html" class="active">بلاگ</a></li>
+      <li><a href="index.html#contact">تماس</a></li>
+    </ul>
+    <a href="chat.html" class="nav-cta">چت با هوش مصنوعی</a>
+    <button class="nav-toggle" id="navToggle" aria-label="منو">☰</button>
+  </nav>
+</header>
+
+<section class="hero" style="padding:64px 0 40px">
+  <div class="byte-grid"></div>
+  <div class="wrap">
+    <span class="eyebrow">BLOG / بایت‌لب</span>
+    <h1>یادداشت‌هایی درباره <em>وب و نرم‌افزار</em></h1>
+    <p class="lead">راهنما و نکات عملی درباره طراحی سایت، اپلیکیشن و نگهداری سیستم.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="post-card">
+      <div class="meta">طراحی سایت</div>
+      <h3><a href="blog/hazine-tarahi-site.html">هزینه طراحی سایت چطور محاسبه می‌شود؟</a></h3>
+      <p style="color:var(--muted)">عوامل موثر بر قیمت طراحی سایت و اینکه چطور یک برآورد واقع‌بینانه بگیرید.</p>
+      <a href="blog/hazine-tarahi-site.html" class="more">ادامه مطلب ←</a>
+    </div>
+    <div class="post-card">
+      <div class="meta">طراحی اپلیکیشن</div>
+      <h3><a href="blog/app-ekhtesasi.html">چه زمانی کسب‌وکار شما به اپلیکیشن اختصاصی نیاز دارد؟</a></h3>
+      <p style="color:var(--muted)">نشانه‌هایی که می‌گویند وقت ساخت اپلیکیشن اختصاصی رسیده.</p>
+      <a href="blog/app-ekhtesasi.html" class="more">ادامه مطلب ←</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© ۱۴۰۵ بایت‌لب — تمام حقوق محفوظ است.</span>
+    <div class="footer-links">
+      <a href="tarahi-site.html">طراحی سایت</a>
+      <a href="tarahi-app.html">طراحی اپلیکیشن</a>
+      <a href="khadamat-computer.html">خدمات کامپیوتر</a>
+      <a href="chat.html">چت هوش مصنوعی</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click', function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+</script>
+</body>
+</html>
